@@ -82,11 +82,8 @@ public class CategoriesController {
     }
 
     @RequestMapping(value = "/admin/delete", method = RequestMethod.POST)
-    public String deleteCategory(String name){
-        AddedCategory db = addedCategoryService.getCategoryByName(name);
-        if (db != null){
-            addedCategoryService.delete(db.getId());
-        }
+    public String deleteCategory(long id){
+        addedCategoryService.delete(id);
         return "redirect:/categories";
     }
 }

@@ -1,4 +1,4 @@
-package com.pizza.crm.controller;
+package com.pizza.crm.controller.admin.rest;
 
 import com.pizza.crm.model.AddedCategory;
 import com.pizza.crm.service.AddedCategoryService;
@@ -20,12 +20,6 @@ public class AdminController {
 
     @Autowired
     private CategoriesService categoriesService;
-
-    @RequestMapping("/admin")
-    public String admin(Model model){
-        model.addAttribute("categories", addedCategoryService.findAllCategories());
-        return "adminPage";
-    }
 
     @RequestMapping(value = "/admin/getinfo", method = RequestMethod.GET)
     @ResponseBody
